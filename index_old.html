@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Page setup -->
+    <meta charset="utf-8">
+    <title>Your title here</title>
+    <meta name="description" content="A brief description of your site for search engines">
+    <meta name="author" content="Information about the author here">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="icon" type="image/png" href="favicon.png">
+  
+    <!-- Stylesheets -->
+    <!-- Reset default styles and add support for google fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+   
+    <!-- Custom styles -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
+
+    <!-- Want to add Bootstrap? -->
+    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+    
+  </head>
+  
+  <body>
+
+    <header id="header">
+      <img src="tom.jpeg" width="250" height="250">
+      <h1>Thomas J. Ringstrom</h1>
+      
+      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
+      <ul class="main-menu">
+        <li><a href="#home">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>                 
+    </header>
+   
+    <div id="container">
+      <div class="inner">
+        <div id="content"> 
+          
+          <div id="home" class="content-region hide">
+            <h2>Home</h2>
+		<p>Hi! My name is Tom, I am a computer scientist who works on two major areas of research: High-dimensional Planning and Intrinisic Motivation, both of which build on the <a href="https://arxiv.org/abs/2506.14045">Options Framework of Reinforcement Learning</a>.  
+      High-dimensional planning refers to planning with many state-variables, all of which can have their own dynamics.  Intrinisic motivation refers to choosing goals that are not explicitly given to an agent. 
+
+    </p>
+
+            <p>
+              My thesis shows how both domains of high-dimensional planning and intrinisic motivation benefit from abandoning reward-maximization in the underlying objtive function.</a>.
+            </p>
+
+            <p>
+              The first paper of note is where I show how to decompose long-horizon Boolean logic tasks with the Options Framework, in a way that allows you to solve for an optimal meta-policy as a linear equation.  This builds on Emo Todorov's work on
+              <a href="https://www.pnas.org/doi/10.1073/pnas.0710743106">Linearly Solvable MDPs</a>, where I extend it to hierachical state-spaces.
+            </p>
+
+            <p>
+              The second paper of note is where I show how to directly optimize predictive maps of what events will occur if an agent acts into the future instead of value functions.  By directly optimizing preditive maps, one can compose individual solutions
+              into a composite solution for a long-horizon task, in high-dimensions of dynamic variables.
+            </p>
+
+            <p>
+              I also have an interest in developing algorithms for Safe AI applications and I am currently participating in the <a href="https://www.matsprogram.org/">MATS program</a>. There has been a recent effort to create algorithms where we can probabalistically verify 
+              that an agent's policy satisfies task-specifications and safety constraints. Since my work algorithms directly optimize the probabitily that events happen, I am showing how this naturally leads to formal verification of policies in high-dimensions, and how we can 
+              create agent's that can use a variety of different decision theories relevant to Safe AI.
+            </p>
+          </div>
+          
+          <div id="about" class="content-region hide">
+            <h2>About</h2>
+            <p>
+              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
+            </p>
+          </div>
+          
+          <div id="contact" class="content-region hide">
+            <h2>Contact</h2>
+            <p>
+              You can contact me at my gmail account: rings034 (AT gmail)
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <footer>  
+      Twitter: <a href="https://x.com/no_reward_for_u">@no_reward_for_u</a>
+    </footer>
+    
+    <!-- Load additional JS scripts here -->
+    <script type="text/javascript" src="script.js"></script>
+    
+  </body>
+</html>

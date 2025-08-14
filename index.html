@@ -3,7 +3,7 @@
   <head>
     <!-- Page setup -->
     <meta charset="utf-8">
-    <title>Your title here</title>
+    <title>Thomas J. Ringstrom</title>
     <meta name="description" content="A brief description of your site for search engines">
     <meta name="author" content="Information about the author here">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
@@ -16,16 +16,231 @@
    
     <!-- Custom styles -->
     <link href="style.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Additional styles for paper sections -->
+    <style>
+      :root {
+        --preview-scale: 1.65;  /* Change this value to adjust preview size */
+        --preview-base-width: 300px;
+        --preview-base-height: 390px;
+        --content-panel-width: 850px;  /* Change this to adjust middle panel width */
+        --base-font-size: 1.6em;  /* Change this to adjust overall font size */
+        --preview-fade-duration: 0.6s;  /* Change this to adjust preview fade-in duration */
+      }
+      
+      /* Override the panel width from style.css */
+      body {
+        max-width: var(--content-panel-width) !important;
+        font-size: var(--base-font-size) !important;
+      }
+      
+      .paper-item {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+        padding: 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      
+      .paper-item:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Keep colors consistent on hover */
+      .paper-item .paper-title a {
+        color: #66b3ff !important;  /* Blue for titles - stays blue */
+      }
+      
+      .paper-item p a {
+        color: #EF6D3D !important;  /* Orange for other links - stays orange */
+      }
+      
+      .paper-thumbnail {
+        flex-shrink: 0;
+        width: 150px;
+        height: 195px;
+        border: 1px solid #ddd;
+        overflow: hidden;
+      }
+      
+      .paper-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      /* Single preview location */
+      #paper-preview-container {
+        position: fixed;
+        left: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(var(--preview-base-width) * var(--preview-scale));
+        height: calc(var(--preview-base-height) * var(--preview-scale));
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--preview-fade-duration) ease;
+        z-index: 100;
+        border: 3px solid #fff;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+        background: white;
+      }
+      
+      #paper-preview-container.active {
+        opacity: 1;
+      }
+      
+      #paper-preview-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .paper-content {
+        flex: 1;
+      }
+      
+      .paper-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .paper-title a {
+        color: #EF6D3D;  /* Orange - same as other links in your site */
+        text-decoration: none;
+      }
+      
+      .paper-title a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Override colors for regular links in paper descriptions */
+      .paper-content p a {
+        color: #66b3ff;  /* Light blue for regular hyperlinks */
+      }
+      
+      .paper-content p a:hover {
+        color: #87CEEB;  /* Lighter blue on hover */
+        text-decoration: underline;
+      }
+      
+      .section-heading {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
+
+      /* CV specific styles */
+      .cv-section {
+        margin-bottom: 30px;
+      }
+
+      .cv-section h3 {
+        color: #EF6D3D;
+        border-bottom: 2px solid #EF6D3D;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+
+      .cv-item {
+        margin-bottom: 20px;
+        padding-left: 15px;
+      }
+
+      .cv-item h4 {
+        color: #66b3ff;
+        margin-bottom: 5px;
+      }
+
+      .cv-item .date {
+        color: #cfd2da;
+        font-style: italic;
+        margin-bottom: 5px;
+      }
+
+      .cv-item .institution {
+        color: #FFFFFF;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .cv-download {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .cv-download a {
+        background-color: #4a5568;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+
+      .cv-download a:hover {
+        background-color: #2d3748;
+      }
+
+      /* Social media icons styling */
+      .social-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        display: inline-block;
+        transition: transform 0.3s ease, opacity 0.8s ease;
+      }
+
+      .social-links a:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+
+      .social-links img {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+      }
+
+      .social-links .twitter-icon {
+        background-color: #66b3ff;
+        padding: 6px;
+        border-radius: 6px;
+      }
+
+      .social-links .linkedin-icon {
+        background-color: #66b3ff;
+        padding: 6px;
+        border-radius: 6px;
+      }
+
+      .social-links .scholar-icon {
+        background-color: #66b3ff;
+        padding: 6px;
+        border-radius: 6px;
+      }
+    </style>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
-
-    <!-- Want to add Bootstrap? -->
-    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
-    
   </head>
   
   <body>
+    <!-- Single preview container for all papers -->
+    <div id="paper-preview-container">
+      <img id="preview-image" src="" alt="Paper preview">
+    </div>
 
     <header id="header">
       <img src="tom.jpeg" width="250" height="250">
@@ -33,9 +248,10 @@
       
       <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
       <ul class="main-menu">
-        <li><a href="#home">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>                 
     </header>
    
@@ -45,39 +261,91 @@
           
           <div id="home" class="content-region hide">
             <h2>Home</h2>
-		<p>Hi! My name is Tom, I am a computer scientist who works on two major areas of research: High-dimensional Planning and Intrinisic Motivation, both of which build on the <a href="https://arxiv.org/abs/2506.14045">Options Framework of Reinforcement Learning</a>.  
-      High-dimensional planning refers to planning with many state-variables, all of which can have their own dynamics.  Intrinisic motivation refers to choosing goals that are not explicitly given to an agent. My work shows how both of these
-      two domains benefit from abandoning reward-maximization in the underlying objtive function.
+            <p>Hi! My name is Tom, I am a computer scientist who works on two major areas of research: High-dimensional Long-horizon Planning and Intrinsic Motivation, both of which build on the <a href="https://people.cs.umass.edu/~barto/courses/cs687/Sutton-Precup-Singh-AIJ99.pdf">Options Framework of Reinforcement Learning</a>. 
+              "High-dimensional long-horizon planning" refers to tasks where the agent must achieve sequences of goals while tracking many dynamic state-variables (such as hunger or thirst states), and "intrinsic motivation" refers to creating goals and incentives that are not explicitly given to an agent.</p>
 
-    </p>
-            <p>
-              The first paper of note is where I show how to decompose long-horizon Boolean logic tasks with the Options Framework, in a way that allows you to solve for an optimal meta-policy as a linear equation.  This builds on Emo Todorov's work on
-              <a href="https://www.pnas.org/doi/10.1073/pnas.0710743106">Linearly Solvable MDPs</a>, where I extend it to hierachical state-spaces.
-            </p>
+            <p>My research shows how both domains benefit from abandoning reward-maximization in the underlying objective function.</p>
 
-            <p>
-              The second paper of note is where I show how to directly optimize predictive maps of what events will occur if an agent acts into the future instead of value functions.  By directly optimizing preditive maps, one can compose individual solutions
-              into a composite solution for a long-horizon task, in high-dimensions of dynamic variables.
-            </p>
+            <div class="section-heading">Thesis</div>
+            
+            <div class="paper-item" data-image="Thesis.jpeg">
+              <div class="paper-thumbnail">
+                <a href="https://link-to-your-thesis.pdf" target="_blank">
+                  <img src="Thesis.jpeg" alt="Thesis cover page">
+                </a>
+              </div>
+              <div class="paper-content">
+                <div class="paper-title">
+                  <a href="https://link-to-your-thesis.pdf" target="_blank">
+                    Reward is not Necessary: Foundations for Compositional Non-Stationary Non-Markovian Hierarchical Planning and Intrinsically Motivated Autonomous Agents
+                  </a>
+                </div>
+                <p>My PhD dissertation presents a comprehensive framework, showing how abandoning reward-maximization in the underlying objective function is advantageous for both high-dimensional planning and intrinsic motivation domains. 
+                  This theory makes it possible to create agents that solve challenging multi-goal tasks in high-dimensions, and propose and evaluate goals deep into the future.</p>
+              </div>
+            </div>
 
-            <p>
-              I also have an interest in developing algorithms for Safe AI applications and I am currently participating in the MATS program. There has been a recent effort to create algorithms in which we can probabalistically verify that an agent's actions 
-              satisfy task-specifications and safety constraints. Since my work algorithms directly optimize the probabitily that events happen, I am showing how this naturally leads to formal verification of policies in high-dimensions, and how we can 
-              create agent's that can use a variety of different decision theories relevant to Safe AI.
-            </p>
+            <div class="section-heading">Key Papers</div>
+
+            <div class="paper-item" data-image="unified.jpeg">
+              <div class="paper-thumbnail">
+                <a href="https://link-to-paper2.pdf" target="_blank">
+                  <img src="unified.jpeg" alt="Unified Theory paper">
+                </a>
+              </div>
+              <div class="paper-content">
+                <div class="paper-title">
+                  <a href="https://link-to-paper2.pdf" target="_blank">
+                    A Unified Theory of Compositionality, Modularity, and Interpretability in Markov Decision Processes
+                  </a>
+                </div>
+                <p>In this theory, we directly optimize predictive maps of what events will occur if an agent acts into the future. By directly optimizing predictive maps instead of value functions, one can compose individual solutions into a composite solution for a long-horizon task with many dynamic variables, such as hunger or hydration states.</p>
+              </div>
+            </div>
+
+            <div class="paper-item" data-image="GoalKernel.jpeg">
+              <div class="paper-thumbnail">
+                <a href="https://link-to-paper1.pdf" target="_blank">
+                  <img src="GoalKernel.jpeg" alt="Goal Kernel Planning paper">
+                </a>
+              </div>
+              <div class="paper-content">
+                <div class="paper-title">
+                  <a href="https://link-to-paper1.pdf" target="_blank">
+                    Goal Kernel Planning: Linearly-Solvable Non-Markovian Policies for Logical Tasks with Goal-Conditioned Options
+                  </a>
+                </div>
+                <p>In this paper, we decompose long-horizon Boolean logic tasks with the Options Framework, in a way that allows you to solve for an optimal meta-policy as a linear equation. This builds on Emo Todorov's work on <a href="https://www.pnas.org/doi/10.1073/pnas.0710743106">Linearly Solvable MDPs</a>, where we extend it to hierarchical state-spaces.</p>
+              </div>
+            </div>
+
+            <div class="section-heading">Current Work</div>
+
+            <p>I also develop algorithms for Safe AI applications and am currently participating in the <a href="https://www.matsprogram.org/">MATS program</a>. There has been a <a href="https://arxiv.org/abs/2405.06624">recent call</a> to create algorithms where we can probabilistically verify that an agent's policy satisfies task-specifications and safety constraints. 
+              I am showing how my work can be used for formal verification of policies in high-dimensions, and how we can create agents that can have their underlying decision theory modified at test-time. 
+              This would be useful so that agents are not locked into expected value theory and can accomidate a variety of other decision criteria relevant to Safe AI.</p>
           </div>
           
           <div id="about" class="content-region hide">
             <h2>About</h2>
             <p>
-              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
+              I studied to be a geneticist in undergrad, but eventually I decided that I wanted to understand more abstract principles of biological intelligence, so I became a computer scientist and started working on Markov Decision Processes. I want to explain where the flexibility of animal intelligence comes from and what principles promote it. My goal is to create the algorithmic foundations for 
+              a theory of planning that achieves human-sample complexity planning in complex environments.
             </p>
+          </div>
+
+          <div id="cv" class="content-region hide">
+            <h2>Curriculum Vitae</h2>
+            
+            <div class="cv-download">
+              <a href="https://drive.google.com/file/d/17CqbLD14XbCnhbe8eNmkBn2E8vVTizfy/view?usp=sharing" target="_blank">Download Full CV (PDF)</a>
+            </div>
           </div>
           
           <div id="contact" class="content-region hide">
             <h2>Contact</h2>
             <p>
-              You can contact me at my gmail account: rings034 (AT gmail)
+              You can contact me at: <a href="mailto:rings034@gmail.com">rings034@gmail.com</a>
             </p>
           </div>
           
@@ -86,11 +354,39 @@
     </div>
 
     <footer>  
-      Twitter: <a href="https://x.com/no_reward_for_u">@no_reward_for_u</a>
+      <div class="social-links">
+        <a href="https://x.com/no_reward_for_u" target="_blank" title="Twitter/X">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/8.9.0/twitter.svg" alt="Twitter" class="twitter-icon">
+        </a>
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" title="LinkedIn">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/8.9.0/linkedin.svg" alt="LinkedIn" class="linkedin-icon">
+        </a>
+        <a href="https://scholar.google.com/citations?user=your-scholar-id" target="_blank" title="Google Scholar">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/8.9.0/googlescholar.svg" alt="Google Scholar" class="scholar-icon">
+        </a>
+      </div>
     </footer>
     
     <!-- Load additional JS scripts here -->
     <script type="text/javascript" src="script.js"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // Handle paper preview on hover
+        $('.paper-item').hover(
+          function() {
+            // Mouse enter
+            var imageUrl = $(this).attr('data-image');
+            $('#preview-image').attr('src', imageUrl);
+            $('#paper-preview-container').addClass('active');
+          },
+          function() {
+            // Mouse leave
+            $('#paper-preview-container').removeClass('active');
+          }
+        );
+      });
+    </script>
     
   </body>
 </html>
