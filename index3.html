@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Page setup -->
+    <meta charset="utf-8">
+    <title>Thomas J. Ringstrom - Personal Website & Blog</title>
+    <meta name="description" content="Welcome to my personal website where I share my thoughts, research, and projects">
+    <meta name="author" content="Thomas J. Ringstrom">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery for interactivity -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+
+    <!-- Header Section -->
+    <header id="header">
+      <img src="logo.png" alt="Thomas J. Ringstrom" width="250" height="250">
+      <h1>Thomas J. Ringstrom</h1>
+      <p>Welcome to my personal blog and research page!</p>
+      
+      <ul class="main-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>                 
+    </header>
+
+    <!-- Main Content -->
+    <div id="container">
+      <div class="inner">
+        <div id="content"> 
+          
+          <!-- Home Section -->
+          <div id="home" class="content-region">
+            <h2>Home</h2>
+            <p>Welcome to my website! Here I share my research, projects, and blog posts about my journey in computer science and AI.</p>
+          </div>
+          
+          <!-- About Section -->
+          <div id="about" class="content-region">
+            <h2>About Me</h2>
+            <p>
+              I am a PhD graduate in Computer Science from the University of Minnesota, specializing in planning algorithms, Markov processes, and reinforcement learning. I enjoy exploring theoretical models of planning and decision-making.
+            </p>
+          </div>
+
+          <!-- Blog Section -->
+          <div id="blog" class="content-region">
+            <h2>Blog</h2>
+            <div class="post" id="post1">
+              <h3 class="post-title">Exploring High-Dimensional Planning</h3>
+              <p class="post-summary">A discussion on how high-dimensional state-spaces affect planning and decision-making in AI.</p>
+              <button class="expand-btn">Read more...</button>
+              <div class="post-content" style="display:none;">
+                <p>This post goes deeper into the complexities of high-dimensional planning...</p>
+              </div>
+            </div>
+
+            <div class="post" id="post2">
+              <h3 class="post-title">Markov Chains and Eigenvalues</h3>
+              <p class="post-summary">Understanding the role of eigenvalues in Markov chains, particularly their implications for transient states.</p>
+              <button class="expand-btn">Read more...</button>
+              <div class="post-content" style="display:none;">
+                <p>This post explores the mathematical underpinnings of Markov chains...</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Section -->
+          <div id="contact" class="content-region">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me via email or connect with me on social media!</p>
+            <p>Email: thomas.j.ringstrom@example.com</p>
+            <p>Twitter: <a href="https://twitter.com/username" target="_blank">username</a></p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>  
+      <p>© 2025 Thomas J. Ringstrom. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+      $(document).ready(function() {
+        // Toggle the visibility of blog post content
+        $('.expand-btn').click(function() {
+          $(this).next('.post-content').slideToggle();
+          var text = $(this).text() === "Read more..." ? "Read less" : "Read more...";
+          $(this).text(text);
+        });
+      });
+    </script>
+
+  </body>
+</html>
