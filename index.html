@@ -45,11 +45,25 @@
           
           <div id="home" class="content-region hide">
             <h2>Home</h2>
-		<p>Hi! My name is Tom, I am a computer scientist who works on two major areas of research: High-dimensional planning and intrinisic motivation, both of which build on the Options Framework of Reinforcement Learning.  High-dimensional planning refers to 
+		<p>Hi! My name is Tom, I am a computer scientist who works on two major areas of research: High-dimensional Planning and Intrinisic Motivation, both of which build on the <a href="https://arxiv.org/abs/2506.14045">Options Framework of Reinforcement Learning</a>.  
+      High-dimensional planning refers to planning with many state-variables, all of which can have their own dynamics.  Intrinisic motivation refers to choosing goals that are not explicitly given to an agent. My work shows how both of these
+      two domains benefit from abandoning reward-maximization in the underlying objtive function.
 
     </p>
             <p>
-              The first area is high-dimensional planning using the Options Framework of Reinfocement Learning.  The primary topic of my research is developing new Bellman equations
+              The first paper of note is where I show how to decompose long-horizon Boolean logic tasks with the Options Framework, in a way that allows you to solve for an optimal meta-policy as a linear equation.  This builds on Emo Todorov's work on
+              <a href="https://www.pnas.org/doi/10.1073/pnas.0710743106">Linearly Solvable MDPs</a>, where I extend it to hierachical state-spaces.
+            </p>
+
+            <p>
+              The second paper of note is where I show how to directly optimize predictive maps of what events will occur if an agent acts into the future instead of value functions.  By directly optimizing preditive maps, one can compose individual solutions
+              into a composite solution for a long-horizon task, in high-dimensions of dynamic variables.
+            </p>
+
+            <p>
+              I also have an interest in developing algorithms for Safe AI applications and I am currently participating in the MATS program. There has been a recent effort to create algorithms in which we can probabalistically verify that an agent's actions 
+              satisfy task-specifications and safety constraints. Since my work algorithms directly optimize the probabitily that events happen, I am showing how this naturally leads to formal verification of policies in high-dimensions, and how we can 
+              create agent's that can use a variety of different decision theories relevant to Safe AI.
             </p>
           </div>
           
@@ -63,7 +77,7 @@
           <div id="contact" class="content-region hide">
             <h2>Contact</h2>
             <p>
-              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
+              You can contact me at my gmail account: rings034 (AT gmail)
             </p>
           </div>
           
