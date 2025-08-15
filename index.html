@@ -34,6 +34,11 @@
         font-size: var(--base-font-size) !important;
       }
       
+      /* Remove focus outlines from all clickable elements */
+      a:focus, button:focus, input:focus, select:focus, textarea:focus {
+        outline: none;
+      }
+      
       .paper-item {
         display: flex;
         gap: 20px;
@@ -343,7 +348,7 @@
           <div id="about" class="content-region hide">
             <h2>About</h2>
             <p>
-              I studied to be a geneticist in undergrad, but eventually I decided that I wanted to understand more abstract principles of biological intelligence, so I became a computer scientist and started working on Markov Decision Processes. I want to explain where the flexibility of animal intelligence comes from and what principles promote it. My goal is to create the algorithmic foundations for 
+              I studied to be a geneticist in undergrad, but I eventually decided that I wanted to understand more abstract principles of biological intelligence, so I became a computer scientist and started working on Markov Decision Processes. I want to explain where the flexibility of animal intelligence comes from and what principles promote it. My goal is to create the algorithmic foundations for 
               a theory of planning that achieves human-level trail-and-error sample complexity in complex Atari video games.
             </p>
           </div>
